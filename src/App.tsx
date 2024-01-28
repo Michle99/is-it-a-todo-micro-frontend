@@ -9,7 +9,7 @@ interface Todo {
 }
 
 const App: React.FC = () => {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState<Todo[]>([]);
 
   const handleAddTodo = (text: string) => {
     const newTodo = { id: Date.now().toString(), text, completed: false };
