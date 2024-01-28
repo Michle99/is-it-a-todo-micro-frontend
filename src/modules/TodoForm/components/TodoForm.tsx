@@ -6,7 +6,7 @@ interface TodoFormProps {
 }
 
 const TodoForm: React.FC<TodoFormProps> = ({ onAdd }) => {
-  const [text, setText] = useState('');
+  const [text, setText] = useState<string>('');
 
   const handleAddTodo = () => {
     if (text.trim() !== '') {
