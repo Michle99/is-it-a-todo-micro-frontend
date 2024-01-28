@@ -16,6 +16,10 @@ const TodoList: React.FC<TodoListProps> = ({
   onDelete, 
   onUpdate 
 }) => {
+  const handleDelete = (id: number, completed: boolean) => {
+    if (completed) onDelete(id)
+  }
+
   return (
     <List>
       {todos.map((todo) => (
@@ -25,7 +29,7 @@ const TodoList: React.FC<TodoListProps> = ({
           text={todo.text}
           completed={todo.completed}
           onToggle={() => onToggle(todo.id)}
-          onDelete={() => onDelete(todo.id)}
+          onDelete={() => handleDelete(todo.id, todo.completed)}
           onUpdate={(_, newText) => onUpdate(todo.id, newText)}
         />
       ))}

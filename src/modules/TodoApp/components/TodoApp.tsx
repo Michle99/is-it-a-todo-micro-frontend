@@ -39,7 +39,8 @@ const TodoApp: React.FC = () => {
   };
 
   const handleDeleteTodo = (id: number) => {
-    setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
+    setTodos((prevTodos) => prevTodos.filter(
+      (todo) => todo.id !== id));
   };
 
   const handleUpdateTodo = (id: number, newText: string) => {
