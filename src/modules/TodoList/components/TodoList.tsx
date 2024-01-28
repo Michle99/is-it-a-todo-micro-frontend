@@ -9,7 +9,12 @@ interface TodoListProps {
   onUpdate: (id: number, newText: string) => void;
 }
 
-const TodoList: React.FC<TodoListProps> = ({ todos, onToggle, onDelete, onUpdate }) => {
+const TodoList: React.FC<TodoListProps> = ({ 
+  todos, 
+  onToggle, 
+  onDelete, 
+  onUpdate 
+}) => {
   return (
     <List>
       {todos.map((todo) => (
