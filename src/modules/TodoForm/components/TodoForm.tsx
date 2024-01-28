@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TextField, Button, Paper } from '@mui/material';
+import { TextField, Button, Paper, Box } from '@mui/material';
 
 interface TodoFormProps {
   onAdd: (text: string) => void;
@@ -24,9 +24,16 @@ const TodoForm: React.FC<TodoFormProps> = ({ onAdd }) => {
         value={text}
         onChange={(e) => setText(e.target.value)}
       />
-      <Button variant="contained" color="primary" fullWidth onClick={handleAddTodo}>
-        Add Todo
-      </Button>
+      <Box mt={2}>
+        <Button 
+          variant="contained" 
+          color="primary" 
+          fullWidth 
+          onClick={handleAddTodo}
+        >
+          Add Todo
+        </Button>
+      </Box>
     </Paper>
   );
 };

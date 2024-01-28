@@ -50,7 +50,7 @@ const TodoApp: React.FC = () => {
   };
 
   return (
-    <Container component="main" maxWidth="xs">
+    <Container component="main" maxWidth="md">
       <CssBaseline />
       <Paper elevation={3} style={{ padding: '20px', margin: '20px 0' }}>
         <Typography component="h1" variant="h5">
