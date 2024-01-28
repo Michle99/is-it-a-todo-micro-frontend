@@ -3,8 +3,14 @@ import { Container, CssBaseline, Paper, Typography } from '@mui/material';
 import TodoForm from "../../TodoForm/components/TodoForm"
 import TodoList from '../../TodoList/components/TodoList';
 
+interface Todo {
+  id: string; 
+  text: string; 
+  completed: boolean
+}
+
 const TodoApp: React.FC = () => {
-  const [todos, setTodos] = useState<{ id: string; text: string; completed: boolean }[]>([]);
+  const [todos, setTodos] = useState<Todo[]>([]);
 
   const handleAddTodo = (text: string) => {
     setTodos((prevTodos) => [...prevTodos, { id: Date.now().toString(), text, completed: false }]);
