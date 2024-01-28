@@ -13,12 +13,24 @@ const TodoApp: React.FC = () => {
     const [todos, setTodos] = useState<Todo[]>([]);
   
     const handleAddTodo = (text: string) => {
-      setTodos((prevTodos) => [...prevTodos, { id: Date.now().toString(), text, completed: false }]);
+      setTodos((prevTodos) => [
+        ...prevTodos, 
+        { 
+            id: Date.now().toString(), 
+            text, 
+            completed: false 
+        }]);
     };
   
     const handleToggleTodo = (id: string) => {
       setTodos((prevTodos) =>
-        prevTodos.map((todo) => (todo.id === id ? { ...todo, completed: !todo.completed } : todo))
+        prevTodos.map((todo) => (todo.id === id ? { 
+            ...todo, 
+            completed: !todo.completed 
+        } 
+        : 
+        todo
+        ))
       );
     };
   
