@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import TodoList from './modules/TodoList/components/TodoList'
 import TodoForm from './modules/TodoForm/components/TodoForm';
+import { Container, CssBaseline, Paper, Box, Typography } from '@mui/material';
 
 interface Todo {
   id: string;
@@ -29,11 +30,18 @@ const App: React.FC = () => {
   };
 
   return (
-    <div>
-      <h1>Micro Frontend Todo App</h1>
-      <TodoForm onAdd={handleAddTodo} />
-      <TodoList todos={todos} onDelete={handleDeleteTodo} onToggle={handleToggleTodo} />
-    </div>
+    <Container component="main" maxWidth="md">
+      <CssBaseline />
+      <Paper elevation={3} style={{ padding: '20px', margin: '50px 0' }}>
+        <Box display="flex" flexDirection="column" alignItems="center">
+          <Typography component="h1" variant="h4">
+            Micro Frontend Todo App
+          </Typography>
+          <TodoForm onAdd={handleAddTodo} />
+          <TodoList todos={todos} onDelete={handleDeleteTodo} onToggle={handleToggleTodo} />
+        </Box>
+      </Paper>
+    </Container>
   );
 };
 
