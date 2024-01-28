@@ -1,34 +1,29 @@
 import React from 'react';
-import { List, Paper } from '@mui/material';
+import { List } from '@mui/material';
 import TodoItem from './TodoItem';
 
 interface TodoListProps {
-  todos: Todo[];
-  onDelete: (id: string) => void;
+  todos: { id: string; text: string; completed: boolean }[];
   onToggle: (id: string) => void;
+  onDelete: (id: string) => void;
+  onUpdate: (id: string, newText: string) => void;
 }
 
-interface Todo {
-  id: string;
-  text: string;
-  completed: boolean;
-}
-
-const TodoList: React.FC<TodoListProps> = ({ todos, onDelete, onToggle }) => {
+const TodoList: React.FC<TodoListProps> = ({ todos, onToggle, onDelete, onUpdate }) => {
   return (
-    <Paper elevation={3} style={{ padding: '20px', margin: '10px' }}>
-      <List>
-        {todos.map((todo) => (
-          <TodoItem
-            key={todo.id}
-            text={todo.text}
-            completed={todo.completed}
-            onDelete={() => onDelete(todo.id)}
-            onToggle={() => onToggle(todo.id)}
-          />
-        ))}
-      </List>
-    </Paper>
+    <List>
+      {todos.map((todo) => (
+        <TodoItem
+          key={todo.id}
+          id={todo.id}
+          text={todo.text}
+          completed={todo.completed}
+          onToggle={() => onToggle(todo.id)}
+          onDelete={() => onDelete(todo.id)}
+          onUpdate={(newText) => onUpdate(todo.id, newText)}
+        />
+      ))}
+    </List>
   );
 };
 

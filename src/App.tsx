@@ -7,7 +7,7 @@ import Footer from './modules/Footer/components/Footer';
 const App: React.FC = () => {
 
   return (
-    <Container component="main" maxWidth="md">
+    <Container >
       <Header/>
       <TodoApp/>
       <Footer/>
