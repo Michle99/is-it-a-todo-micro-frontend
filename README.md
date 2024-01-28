@@ -38,7 +38,7 @@ The todo form component provides a text input and a button to add new todos.
 
 1. Clone the repository:
 
-   ```bash
+```bash
    git clone https://github.com/Michle99/todo-microfrontend.git
 ```
 
