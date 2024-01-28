@@ -1,18 +1,16 @@
 import React from 'react';
-import { Container, CssBaseline, Paper, Box, Typography } from '@mui/material';
+import { Container } from '@mui/material';
+import Header from './modules/Header/components/Header';
+import TodoApp from './modules/TodoApp/components/TodoApp';
+import Footer from './modules/Footer/components/Footer';
 
 const App: React.FC = () => {
 
   return (
     <Container component="main" maxWidth="md">
-      <CssBaseline />
-      <Paper elevation={3} style={{ padding: '20px', margin: '50px 0' }}>
-        <Box display="flex" flexDirection="column" alignItems="center">
-          <Typography component="h1" variant="h4">
-            Micro Frontend Todo App
-          </Typography>
-        </Box>
-      </Paper>
+      <Header/>
+      <TodoApp/>
+      <Footer/>
     </Container>
   );
 };

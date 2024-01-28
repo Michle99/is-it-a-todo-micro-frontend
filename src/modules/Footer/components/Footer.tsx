@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
         <BottomNavigationAction 
             label="GitHub" 
             icon={<GitHubIcon />} 
-            href="https://github.com/Michle88/todo-microfrontend" 
+            href="https://github.com/Michle99/todo-microfrontend" 
         />
       </BottomNavigation>
     </Paper>
