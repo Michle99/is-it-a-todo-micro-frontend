@@ -3,7 +3,7 @@ import { Container, CssBaseline, Paper, Typography } from '@mui/material';
 import TodoForm from "../../TodoForm/components/TodoForm"
 import TodoList from '../../TodoList/components/TodoList';
 
-interface Todo {
+export interface Todo {
   id: number; 
   text: string; 
   completed: boolean

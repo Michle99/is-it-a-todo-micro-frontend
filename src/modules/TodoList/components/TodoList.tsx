@@ -1,9 +1,10 @@
 import React from 'react';
 import { List } from '@mui/material';
 import TodoItem from './TodoItem';
+import { Todo } from '../../TodoApp/components/TodoApp';
 
 interface TodoListProps {
-  todos: { id: number; text: string; completed: boolean }[];
+  todos: Todo[];
   onToggle: (id: number) => void;
   onDelete: (id: number) => void;
   onUpdate: (id: number, newText: string) => void;
