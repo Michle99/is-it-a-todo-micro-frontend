@@ -3,11 +3,7 @@ import TodoList from './modules/TodoList/components/TodoList'
 import TodoForm from './modules/TodoForm/components/TodoForm';
 import { Container, CssBaseline, Paper, Box, Typography } from '@mui/material';
 
-interface Todo {
-  id: string;
-  text: string;
-  completed: boolean;
-}
+
 
 const App: React.FC = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
