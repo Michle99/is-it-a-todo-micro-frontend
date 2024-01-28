@@ -26,7 +26,7 @@ const TodoList: React.FC<TodoListProps> = ({
           completed={todo.completed}
           onToggle={() => onToggle(todo.id)}
           onDelete={() => onDelete(todo.id)}
-          onUpdate={(newText) => onUpdate(todo.id, newText)}
+          onUpdate={(_, newText) => onUpdate(todo.id, newText)}
         />
       ))}
     </List>

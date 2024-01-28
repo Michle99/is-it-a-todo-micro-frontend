@@ -12,12 +12,12 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import DoneIcon from '@mui/icons-material/Done';
 
 interface TodoItemProps {
-  id: string;
+  id: number;
   text: string;
   completed: boolean;
-  onToggle: (id: string) => void;
-  onDelete: (id: string) => void;
-  onUpdate: (id: string, newText: string) => void;
+  onToggle: (id: number) => void;
+  onDelete: (id: number) => void;
+  onUpdate: (id: number, newText: string) => void;
 }
 
 const TodoItem: React.FC<TodoItemProps> = ({
@@ -46,8 +46,7 @@ const TodoItem: React.FC<TodoItemProps> = ({
   const handleDoneEditing = () => {
     if (editedText.trim() !== '') {
       setIsEditing(false);
-      onUpdate(id, editedText);
-      setEditedText(text);
+      onUpdate(id, editedText.toString());
     }
   };
 
