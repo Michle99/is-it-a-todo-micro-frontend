@@ -5,7 +5,7 @@ const Header: React.FC = () => {
   return (
     <AppBar position="static">
       <Toolbar>
-        <Typography variant="h6">Todo App</Typography>
+        <Typography variant="h6">Micro Frontend Todo App</Typography>
       </Toolbar>
     </AppBar>
   );
