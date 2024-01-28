@@ -29,7 +29,7 @@ const TodoItem: React.FC<TodoItemProps> = ({
   onUpdate,
 }) => {
   const [isEditing, setIsEditing] = useState(false);
-  const [editedText, setEditedText] = useState(text);
+  const [editedText, setEditedText] = useState<string>(text);
 
   const handleToggle = () => {
     onToggle(id);
@@ -45,8 +45,9 @@ const TodoItem: React.FC<TodoItemProps> = ({
 
   const handleDoneEditing = () => {
     if (editedText.trim() !== '') {
-      onUpdate(id, editedText);
       setIsEditing(false);
+      onUpdate(id, editedText);
+      setEditedText(text);
     }
   };
 

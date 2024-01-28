@@ -4,29 +4,31 @@ import TodoForm from "../../TodoForm/components/TodoForm"
 import TodoList from '../../TodoList/components/TodoList';
 
 interface Todo {
-  id: string; 
+  id: number; 
   text: string; 
   completed: boolean
 }
 
 const TodoApp: React.FC = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
+  
+  console.log("Todo:", todos);
 
   const handleAddTodo = (text: string) => {
-    setTodos((prevTodos) => [...prevTodos, { id: Date.now().toString(), text, completed: false }]);
+    setTodos((prevTodos) => [...prevTodos, { id: Date.now(), text, completed: false }]);
   };
 
-  const handleToggleTodo = (id: string) => {
+  const handleToggleTodo = (id: number) => {
     setTodos((prevTodos) =>
       prevTodos.map((todo) => (todo.id === id ? { ...todo, completed: !todo.completed } : todo))
     );
   };
 
-  const handleDeleteTodo = (id: string) => {
+  const handleDeleteTodo = (id: number) => {
     setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
   };
 
-  const handleUpdateTodo = (id: string, newText: string) => {
+  const handleUpdateTodo = (id: number, newText: string) => {
     setTodos((prevTodos) =>
       prevTodos.map((todo) => (todo.id === id ? { ...todo, text: newText } : todo))
     );

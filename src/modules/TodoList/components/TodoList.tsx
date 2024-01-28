@@ -3,10 +3,10 @@ import { List } from '@mui/material';
 import TodoItem from './TodoItem';
 
 interface TodoListProps {
-  todos: { id: string; text: string; completed: boolean }[];
-  onToggle: (id: string) => void;
-  onDelete: (id: string) => void;
-  onUpdate: (id: string, newText: string) => void;
+  todos: { id: number; text: string; completed: boolean }[];
+  onToggle: (id: number) => void;
+  onDelete: (id: number) => void;
+  onUpdate: (id: number, newText: string) => void;
 }
 
 const TodoList: React.FC<TodoListProps> = ({ todos, onToggle, onDelete, onUpdate }) => {
