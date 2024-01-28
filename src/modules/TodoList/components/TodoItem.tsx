@@ -1,5 +1,6 @@
 import React from 'react';
-import { ListItem, ListItemText, IconButton, Checkbox } from '@mui/material';
+import { ListItem, ListItemText, IconButton, Checkbox, ListItemSecondaryAction } from '@mui/material';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 interface TodoItemProps {
   text: string;
@@ -10,17 +11,14 @@ interface TodoItemProps {
 
 const TodoItem: React.FC<TodoItemProps> = ({ text, completed, onDelete, onToggle }) => {
   return (
-    <ListItem
-      button
-      sx={{
-        textDecoration: completed ? 'line-through' : 'none',
-      }}
-    >
+    <ListItem>
       <Checkbox checked={completed} onChange={onToggle} />
-      <ListItemText primary={text} />
-      <IconButton onClick={onDelete} aria-label="Delete">
-        🗑️
-      </IconButton>
+      <ListItemText primary={text} style={{ textDecoration: completed ? 'line-through' : 'none' }} />
+      <ListItemSecondaryAction>
+        <IconButton edge="end" onClick={onDelete}>
+          <DeleteIcon />
+        </IconButton>
+      </ListItemSecondaryAction>
     </ListItem>
   );
 };
